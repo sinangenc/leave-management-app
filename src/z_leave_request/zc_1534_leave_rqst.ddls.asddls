@@ -45,6 +45,8 @@ define root view entity ZC_1534_LEAVE_RQST
   @ObjectModel.virtualElementCalculatedBy: 'ABAP:ZCL_STATUS_CODE' 
   virtual StatusCode : abap.int2,
   RequestDate,
+  @ObjectModel.text.element: ['ReviewerFullName']
+  @UI.textArrangement: #TEXT_ONLY
   ApprovedBy,
   ApprovedAt,
   @Semantics: {
@@ -67,5 +69,6 @@ define root view entity ZC_1534_LEAVE_RQST
     systemDateTime.lastChangedAt: true
   }
   LastChangedAt,
+  _Reviewer.EmployeeName as ReviewerFullName,
   _BaseEntity
 }
