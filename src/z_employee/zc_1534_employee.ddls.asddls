@@ -18,6 +18,7 @@ define root view entity ZC_1534_EMPLOYEE
   Email,
   JobTitle,
   HireDate,
+  UserTechnicalName,
   @Consumption.valueHelpDefinition:
   [{
     entity :{

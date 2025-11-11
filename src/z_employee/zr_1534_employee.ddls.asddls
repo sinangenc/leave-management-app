@@ -12,6 +12,7 @@ define root view entity ZR_1534_EMPLOYEE
   email as Email,
   job_title as JobTitle,
   hire_date as HireDate,
+  user_technical_name as UserTechnicalName,
   department_id as DepartmentID,
   _Department,
   @Semantics.user.createdBy: true

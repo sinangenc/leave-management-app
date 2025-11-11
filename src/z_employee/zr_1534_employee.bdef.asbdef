@@ -54,6 +54,7 @@ authorization master( global )
     Email = email;
     JobTitle = job_title;
     HireDate = hire_date;
+    UserTechnicalName = user_technical_name;
     DepartmentID = department_id;
     LocalCreatedBy = local_created_by;
     LocalCreatedAt = local_created_at;

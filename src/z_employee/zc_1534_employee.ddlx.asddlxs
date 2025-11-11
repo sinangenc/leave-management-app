@@ -53,6 +53,22 @@ annotate view ZC_1534_EMPLOYEE with
   @UI.hidden: true
   EmployeeID;
   
+  @EndUserText.label: 'User Id'
+  @UI.identification: [ {
+    position: 10
+  } ]
+  @UI.lineItem: [ {
+    position: 10
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  @UI.fieldGroup: [ { 
+    qualifier: 'EmployeeDetails', 
+    position: 10 
+  } ]
+  UserTechnicalName;
+  
   @UI.lineItem: [{ hidden: true }]
   FullName;
   
