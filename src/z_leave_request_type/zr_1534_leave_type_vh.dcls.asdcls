@@ -1,0 +1,9 @@
+@EndUserText.label: 'Access Control for ZR_1534_LEAVE_TYPE_VH'
+@MappingRole: true
+define role ZR_1534_LEAVE_TYPE_VH {
+    grant 
+        select
+            on
+                ZR_1534_LEAVE_TYPE_VH
+                    where true;
+}

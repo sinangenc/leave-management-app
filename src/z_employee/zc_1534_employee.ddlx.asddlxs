@@ -1,0 +1,230 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.typeName: 'Employee'
+@UI.headerInfo.typeNamePlural: 'Employees'
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'FullName'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'DepartmentName'
+annotate view ZC_1534_EMPLOYEE with
+{
+
+  //Facets
+  @UI.facet: [
+       // Facet 1      
+       { id:              'EmployeeDetails',
+         purpose:         #STANDARD,
+         type:            #FIELDGROUP_REFERENCE,
+         label:           'Employee Details',
+         targetQualifier: 'EmployeeDetails',
+         position:         20
+        },
+
+       // Facet 2    
+       { id:              'LeaveRequests',
+         purpose:         #STANDARD,
+         type:            #LINEITEM_REFERENCE,
+         label:           'Leave Requests',
+//       targetQualifier: 'LeaveRequests',
+         targetElement: '_LeaveRequest',
+         position:        30
+//         ,hidden: true
+       }
+  ]
+  
+
+
+//  @EndUserText.label: 'EmployeeID'
+//  @UI.identification: [ {
+//    position: 10 , 
+//    label: 'EmployeeID'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 10 , 
+//    label: 'EmployeeID'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 10 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 10 ,
+//    type: #WITH_INTENT_BASED_NAVIGATION,
+//    targetElement: '_LeaveRequest',
+//  } ]
+  @UI.hidden: true
+  EmployeeID;
+  
+  @UI.lineItem: [{ hidden: true }]
+  FullName;
+  
+  @UI.identification: [ {
+    position: 10
+  } ]
+  @UI.lineItem: [ {
+    position: 10
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  @UI.fieldGroup: [ { 
+    qualifier: 'EmployeeDetails', 
+    position: 10 
+  } ]
+  FirstName;
+  
+  @UI.identification: [ {
+    position: 20 
+  } ]
+  @UI.lineItem: [ {
+    position: 20 
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  @UI.fieldGroup: [ { 
+    qualifier: 'EmployeeDetails', 
+    position: 20 
+  } ]
+  LastName;
+  
+  @UI.identification: [ {
+    position: 50 
+  } ]
+  @UI.lineItem: [ {
+    position: 50 
+  } ]
+//  @UI.selectionField: [ {
+//    position: 50 
+//  } ]
+  @UI.fieldGroup: [ { 
+    qualifier: 'EmployeeDetails', 
+    position: 50 
+  } ]
+  Email;
+  
+  @UI.identification: [ {
+    position: 40 
+  } ]
+  @UI.lineItem: [ {
+    position: 40 
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  @UI.fieldGroup: [ { 
+    qualifier: 'EmployeeDetails', 
+    position: 40 
+  } ]
+  JobTitle;
+  
+  @UI.identification: [ {
+    position: 60 
+  } ]
+  @UI.lineItem: [ {
+    position: 60 
+  } ]
+//  @UI.selectionField: [ {
+//    position: 60 
+//  } ]
+  @UI.fieldGroup: [ { 
+    qualifier: 'EmployeeDetails', 
+    position: 60 
+  } ]
+  HireDate;
+  
+  @EndUserText.label: 'Department'
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Department'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 , 
+    label: 'Department'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  @UI.fieldGroup: [ { 
+    qualifier: 'EmployeeDetails', 
+    position: 30 
+  } ]
+  DepartmentID;
+  
+  
+  
+  @UI.hidden: true
+  DepartmentName;
+  
+//  @UI.identification: [ {
+//    position: 80 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 80 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 80 
+//  } ]  
+  @UI.hidden: true
+  LocalCreatedBy;
+  
+//  @UI.identification: [ {
+//    position: 90 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 90 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 90 
+//  } ]
+  @UI.hidden: true
+  LocalCreatedAt;
+  
+//  @UI.identification: [ {
+//    position: 100 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 100 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 100 
+//  } ]
+  @UI.hidden: true
+  LocalLastchangedBy;
+  
+//  @UI.identification: [ {
+//    position: 110 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 110 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 110 
+//  } ]
+  @UI.hidden: true
+  LocalLastchangedAt;
+  
+//  @UI.identification: [ {
+//    position: 120 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 120 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 120 
+//  } ]
+  @UI.hidden: true
+  LastChangedAt;
+  
+  @EndUserText.label: '_BaseEntity'
+  @UI.identification: [ {
+    position: 130 , 
+    label: '_BaseEntity'
+  } ]
+  @UI.lineItem: [ {
+    position: 130 , 
+    label: '_BaseEntity'
+  } ]
+  @UI.selectionField: [ {
+    position: 130 
+  } ]
+  _BaseEntity;
+}

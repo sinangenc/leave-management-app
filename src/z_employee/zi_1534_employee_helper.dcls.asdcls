@@ -1,0 +1,11 @@
+@EndUserText.label: 'Access Control for ZI_1534_EMPLOYEE_HELPER'
+@MappingRole: true
+define role ZI_1534_EMPLOYEE_HELPER {
+    grant 
+        select
+            on
+                ZI_1534_EMPLOYEE_HELPER
+                    where
+                        INHERITING CONDITIONS FROM ENTITY ZR_1534_EMPLOYEE;
+                        
+}

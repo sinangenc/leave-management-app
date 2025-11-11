@@ -1,0 +1,56 @@
+managed implementation in class ZBP_R_1534_LEAVE_TYPE unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_1534_LEAVE_TYPE alias LeaveType
+persistent table Z1534_LEAVE_TYPE
+extensible
+draft table Z1534_LEAVE_TP_D
+etag master LocalLastchangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( readonly )
+   LeaveTypeID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastchangedBy,
+   LocalLastchangedAt,
+   LastChangedAt;
+
+  field ( numbering : managed )
+   LeaveTypeID;
+
+  field( mandatory )
+  LeaveTypeName;
+
+
+  create;
+  update;
+  delete;
+
+  validation leaveTypeNameNotEmpty on save {create; field LeaveTypeName;}
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare
+  {
+    validation leaveTypeNameNotEmpty;
+  }
+
+  mapping for Z1534_LEAVE_TYPE corresponding extensible
+  {
+    LeaveTypeID = leave_type_id;
+    LeaveTypeName = leave_type_name;
+    RequiresApproval = requires_approval;
+    MaxDaysPerYear= max_days_per_year;
+    LocalCreatedBy = local_created_by;
+    LocalCreatedAt = local_created_at;
+    LocalLastchangedBy = local_lastchanged_by;
+    LocalLastchangedAt = local_lastchanged_at;
+    LastChangedAt = last_changed_at;
+  }
+
+}

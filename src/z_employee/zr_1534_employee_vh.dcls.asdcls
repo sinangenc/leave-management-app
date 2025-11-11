@@ -1,0 +1,10 @@
+@EndUserText.label: 'Access Control for ZR_1534_EMPLOYEE_VH'
+@MappingRole: true
+define role ZR_1534_EMPLOYEE_VH {
+    grant 
+        select
+            on
+                ZR_1534_EMPLOYEE_VH
+                    where TRUE;
+                        
+}

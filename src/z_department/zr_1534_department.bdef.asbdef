@@ -1,0 +1,59 @@
+managed implementation in class ZBP_R_1534_DEPARTMENT unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_1534_DEPARTMENT alias Department
+persistent table Z1534_DEPARTMENT
+extensible
+draft table Z1534_DPRTMENT_D
+etag master LocalLastchangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( readonly )
+   DepartmentID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastchangedBy,
+   LocalLastchangedAt,
+   LastChangedAt;
+
+   field(mandatory)
+   DepartmentName;
+
+  field ( numbering : managed )
+   DepartmentID;
+
+
+  create;
+  update;
+  delete;
+
+  validation validateDepartmentNameNotEmpty on save {create;field DepartmentName;}
+  validation validateManagerUnique on save { create; update; field Manager; }
+
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare
+  {
+    validation validateDepartmentNameNotEmpty;
+    validation validateManagerUnique;
+  }
+
+  mapping for Z1534_DEPARTMENT corresponding extensible
+  {
+    DepartmentID = department_id;
+    DepartmentName = department_name;
+    Manager = manager;
+//    ParentDepartment = parent_department;
+    LocalCreatedBy = local_created_by;
+    LocalCreatedAt = local_created_at;
+    LocalLastchangedBy = local_lastchanged_by;
+    LocalLastchangedAt = local_lastchanged_at;
+    LastChangedAt = last_changed_at;
+  }
+
+}

@@ -1,0 +1,11 @@
+@EndUserText.label: 'Access Control for ZI_1534_DEPARTMENT_EMP_COUNT'
+@MappingRole: true
+define role ZI_1534_DEPARTMENT_EMP_COUNT {
+    grant 
+        select
+            on
+                ZI_1534_DEPARTMENT_EMP_COUNT
+                    where
+                        true;
+                        
+}

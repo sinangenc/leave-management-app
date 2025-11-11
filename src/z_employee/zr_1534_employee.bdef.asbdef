@@ -1,0 +1,65 @@
+managed implementation in class ZBP_R_1534_EMPLOYEE unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_1534_EMPLOYEE alias Employee
+persistent table Z1534_EMPLOYEE
+extensible
+draft table Z1534_EMPLOYEE_D
+etag master LocalLastchangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( readonly )
+   EmployeeID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastchangedBy,
+   LocalLastchangedAt,
+   LastChangedAt;
+
+  field ( numbering : managed )
+   EmployeeID;
+
+
+  field ( mandatory )
+    FirstName,
+    LastName,
+    Email,
+    JobTitle,
+    HireDate,
+    DepartmentID;
+
+
+  create;
+  update;
+  delete;
+
+  validation validateNotEmptyFields on save {create;update;}
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare
+  {
+    validation validateNotEmptyFields;
+  }
+
+  mapping for Z1534_EMPLOYEE corresponding extensible
+  {
+    EmployeeID = employee_id;
+    FirstName = first_name;
+    LastName = last_name;
+    Email = email;
+    JobTitle = job_title;
+    HireDate = hire_date;
+    DepartmentID = department_id;
+    LocalCreatedBy = local_created_by;
+    LocalCreatedAt = local_created_at;
+    LocalLastchangedBy = local_lastchanged_by;
+    LocalLastchangedAt = local_lastchanged_at;
+    LastChangedAt = last_changed_at;
+  }
+
+}

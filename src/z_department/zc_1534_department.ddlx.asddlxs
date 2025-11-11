@@ -1,0 +1,178 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.typeName: 'Department'
+@UI.headerInfo.typeNamePlural: 'Departments'
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'DepartmentName'
+//@UI.headerInfo.description.type: #STANDARD
+//@UI.headerInfo.description.value: 'DepartmentName'
+annotate view ZC_1534_DEPARTMENT with
+{
+
+  //Facets
+  @UI.facet: [
+       // Facet 1      
+       { id: 'DepartmentDetails',
+         purpose: #STANDARD,
+         type: #IDENTIFICATION_REFERENCE,
+         label: 'Department Details',
+//         targetQualifier: 'DepartmentDetails',
+         position: 10
+        },
+
+       // Facet 2    
+       { id: 'DepartmentEmployees',
+         purpose: #STANDARD,
+         type: #LINEITEM_REFERENCE,
+         label: 'Employees in Department',
+         targetElement: '_DepartmentEmployees',
+         position: 30
+       }
+  ]
+
+//  @EndUserText.label: 'DepartmentID'
+//  @UI.identification: [ {
+//    position: 10 , 
+//    label: 'DepartmentID'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 10 , 
+//    label: 'DepartmentID'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 10 
+//  } ]
+  @UI.hidden: true
+  DepartmentID;
+  
+//  @UI.facet: [ {
+//    label: 'Department Information', 
+//    id: 'DepartmentInfo', 
+//    purpose: #STANDARD, 
+//    position: 10 , 
+//    type: #IDENTIFICATION_REFERENCE
+//  } ]
+  @UI.identification: [ {
+    position: 10
+  } ]
+  @UI.lineItem: [ {
+    position: 10 
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  DepartmentName;
+  
+  @EndUserText.label: 'Manager'
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Manager'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label: 'Manager'
+  } ]
+//  @UI.selectionField: [ {
+//    position: 20 
+//  } ]
+  Manager;
+  
+  @UI.hidden: true
+  ManagerFullName;
+  
+  @EndUserText.label: 'Employee Count'
+  @UI.identification: [ {
+    position: 30
+  } ]
+  @UI.lineItem: [ {
+    position: 30
+  } ]
+  EmployeeCount;
+  
+//  @EndUserText.label: 'Parent Department'
+//  @UI.identification: [ {
+//    position: 30 , 
+//    label: 'Parent Department'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 30 , 
+//    label: 'Parent Department'
+//  } ]
+////  @UI.selectionField: [ {
+////    position: 20 
+////  } ]
+//  ParentDepartment;
+  
+//  @UI.identification: [ {
+//    position: 40 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 40 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 40 
+//  } ]
+  @UI.hidden: true
+  LocalCreatedBy;
+  
+//  @UI.identification: [ {
+//    position: 50 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 50 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 50 
+//  } ]
+  @UI.hidden: true
+  LocalCreatedAt;
+  
+//  @UI.identification: [ {
+//    position: 60 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 60 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 60 
+//  } ]
+  @UI.hidden: true
+  LocalLastchangedBy;
+  
+//  @UI.identification: [ {
+//    position: 70 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 70 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 70 
+//  } ]
+  @UI.hidden: true
+  LocalLastchangedAt;
+  
+//  @UI.identification: [ {
+//    position: 80 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 80 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 80 
+//  } ]
+  @UI.hidden: true
+  LastChangedAt;
+  
+  @EndUserText.label: '_BaseEntity'
+  @UI.identification: [ {
+    position: 90 , 
+    label: '_BaseEntity'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 , 
+    label: '_BaseEntity'
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  _BaseEntity;
+}

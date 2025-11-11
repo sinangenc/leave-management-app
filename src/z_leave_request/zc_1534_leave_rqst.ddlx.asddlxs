@@ -1,0 +1,206 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.typeName: 'Leave Request'
+@UI.headerInfo.typeNamePlural: 'Leave Requests'
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'EmployeeID'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'LeaveTypeName'
+
+annotate view ZC_1534_LEAVE_RQST with
+{
+//  @EndUserText.label: 'LeaveRequestID'
+//  @UI.identification: [ {
+//    position: 10 , 
+//    label: 'LeaveRequestID'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 10 , 
+//    label: 'LeaveRequestID'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 10 
+//  } ]
+  @UI.hidden: true
+  LeaveRequestID;
+  
+  @EndUserText.label: 'Employee'
+  @UI.facet: [ {
+    label: 'Leave Request Info', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'Employee'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'Employee'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  EmployeeID;
+  
+  @EndUserText.label: 'Leave Type'
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Leave Type'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 , 
+    label: 'Leave Type'
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  LeaveTypeID;
+  
+  @UI.identification: [ {
+    position: 30 
+  } ]
+  @UI.lineItem: [ {
+    position: 20 
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  StartDate;
+  
+  @UI.identification: [ {
+    position: 40 
+  } ]
+  @UI.lineItem: [ {
+    position: 30 
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  EndDate;
+  
+  @UI.identification: [ 
+    { position: 50, criticality: 'StatusCode' }, 
+    { type: #FOR_ACTION, dataAction: 'approveLeaveRequest', label: 'Approve' },
+    { type: #FOR_ACTION, dataAction: 'rejectLeaveRequest', label: 'Reject' }  
+  ]
+  @UI.lineItem: [ 
+    { position: 50, criticality: 'StatusCode' }, 
+    { type: #FOR_ACTION, dataAction: 'approveLeaveRequest', label: 'Approve' },
+    { type: #FOR_ACTION, dataAction: 'rejectLeaveRequest', label: 'Reject' }  
+  ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]  
+  Status;
+  
+  @UI.hidden: true
+  StatusCode;
+
+  @UI.identification: [ {
+    position: 60 
+  } ]
+  @UI.lineItem: [ {
+    position: 60 
+  } ]
+//  @UI.selectionField: [ {
+//    position: 60 
+//  } ]
+  RequestDate;
+  
+  @EndUserText.label: 'Reviewed By'
+  @UI.identification: [ {
+    position: 70
+  } ]
+  @UI.lineItem: [ {
+    position: 70
+  } ]
+  ApprovedBy;
+  
+  @EndUserText.label: 'Reviewed At'
+  @UI.identification: [ {
+    position: 80 
+  } ]
+  @UI.lineItem: [ {
+    position: 80 
+  } ]
+//  @UI.selectionField: [ {
+//    position: 70 
+//  } ]
+  ApprovedAt;
+  
+//  @UI.identification: [ {
+//    position: 90 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 90 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 90 
+//  } ]
+  @UI.hidden: true
+  LocalCreatedBy;
+  
+//  @UI.identification: [ {
+//    position: 100 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 100 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 100 
+//  } ]
+  @UI.hidden: true
+  LocalCreatedAt;
+  
+//  @UI.identification: [ {
+//    position: 110 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 110 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 110 
+//  } ]
+  @UI.hidden: true
+  LocalLastchangedBy;
+  
+//  @UI.identification: [ {
+//    position: 120 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 120 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 120 
+//  } ]
+  @UI.hidden: true
+  LocalLastchangedAt;
+  
+//  @UI.identification: [ {
+//    position: 130 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 130 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 130 
+//  } ]
+  @UI.hidden: true
+  LastChangedAt;
+    
+  @EndUserText.label: '_BaseEntity'
+  @UI.identification: [ {
+    position: 140 , 
+    label: '_BaseEntity'
+  } ]
+  @UI.lineItem: [ {
+    position: 140 , 
+    label: '_BaseEntity'
+  } ]
+  @UI.selectionField: [ {
+    position: 140 
+  } ]
+  _BaseEntity;
+}

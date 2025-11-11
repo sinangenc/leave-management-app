@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZR_1534_LEAVE_RQST</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Message Class for ZR_1534_LEAVE_RQST</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZR_1534_LEAVE_RQST</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>Employee cannot be empty!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZR_1534_LEAVE_RQST</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Leave Type cannot be empty!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZR_1534_LEAVE_RQST</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Start Date cannot be empty!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZR_1534_LEAVE_RQST</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>End Date cannot be empty!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZR_1534_LEAVE_RQST</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Start date cannot be after end date!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZR_1534_LEAVE_RQST</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Leave dates overlap with an existing request!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZR_1534_LEAVE_RQST</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Maximum yearly limit (&amp;1 days) exceeded!</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

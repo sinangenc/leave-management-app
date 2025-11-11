@@ -1,0 +1,78 @@
+managed implementation in class ZBP_R_1534_LEAVE_RQST unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_1534_LEAVE_RQST alias LeaveRequest
+persistent table Z1534_LEAVE_RQST
+extensible
+draft table Z1534_LVE_RQST_D
+etag master LocalLastchangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( readonly )
+   LeaveRequestID,
+   Status,
+   RequestDate,
+   ApprovedBy,
+   ApprovedAt,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastchangedBy,
+   LocalLastchangedAt,
+   LastChangedAt;
+
+  field ( numbering : managed )
+   LeaveRequestID;
+
+  field ( mandatory )
+    EmployeeID,
+    LeaveTypeID,
+    StartDate,
+    EndDate;
+
+  create;
+  update;
+  delete;
+
+  validation validateNotEmptyFields on save {create;update;}
+  validation validateOverlappingLeave on save { create; update; }
+  validation validateMaxDaysPerYear on save { create; update; }
+
+
+
+  determination setRequestDate on save {create;}
+  determination determineStatus on modify {create;field LeaveTypeID;}
+
+  action ( features: instance ) approveLeaveRequest result [1] $self;
+  action ( features: instance ) rejectLeaveRequest result [1] $self;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action (features : instance) Edit;
+  draft action Resume;
+  draft determine action Prepare{
+    validation validateNotEmptyFields;
+    validation validateOverlappingLeave;
+    validation validateMaxDaysPerYear;
+  }
+
+  mapping for Z1534_LEAVE_RQST corresponding extensible
+  {
+    LeaveRequestID = leave_request_id;
+    EmployeeID = employee_id;
+    LeaveTypeID= leave_type_id;
+    StartDate = start_date;
+    EndDate = end_date;
+    Status = status;
+    RequestDate = request_date;
+    ApprovedBy = approved_by;
+    ApprovedAt = approved_at;
+    LocalCreatedBy = local_created_by;
+    LocalCreatedAt = local_created_at;
+    LocalLastchangedBy = local_lastchanged_by;
+    LocalLastchangedAt = local_lastchanged_at;
+    LastChangedAt = last_changed_at;
+  }
+
+}

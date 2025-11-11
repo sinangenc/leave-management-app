@@ -1,0 +1,15 @@
+@EndUserText: {
+  label: 'Service Definition for Leave Management'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_1534_LEAVE_RQST'
+  }
+}
+define service ZUI_LEAVE_MANAGEMENT_O4
+  provider contracts odata_v4_ui {
+  expose ZC_1534_LEAVE_TYPE as LeaveType;
+  expose ZC_1534_DEPARTMENT as Department;
+  expose ZC_1534_EMPLOYEE   as Employee;
+  expose ZC_1534_LEAVE_RQST as LeaveRequest;
+}

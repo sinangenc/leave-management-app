@@ -1,0 +1,15 @@
+@EndUserText.label: 'ZR_1534_LEAVE_RQST'
+@MappingRole: true
+define role ZR_1534_LEAVE_RQST {
+  grant select on ZR_1534_LEAVE_RQST
+  where
+      ( -- Users own requests
+        LocalCreatedBy = $session.user
+      )
+//      or
+//      (
+//        -- Kullanıcı yöneticisi olduğu departmandaki çalışanların taleplerini görebilir
+//        _Employee._Department.Manager = $session.user
+//      )
+      ;
+}

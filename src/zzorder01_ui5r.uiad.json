@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Sales Order"
+  },
+  "ui5AppDetails": {
+    "appId": "zzorder01"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_BED90E82CC0275464C6E4BEAB935B51D0B4A6A37_TM",
+    "semanticObject": "My_Order",
+    "action": "Display_Order",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_BED90E82CC0275464C6E4BEAB935B51D0B4A6A37_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Sales Order"
+      }
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.typeName: 'Leave Type'
+@UI.headerInfo.typeNamePlural: 'Leave Types'
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'LeaveTypeName'
+//@UI.headerInfo.description.type: #STANDARD
+//@UI.headerInfo.description.value: 'LeaveTypeName'
+annotate view ZC_1534_LEAVE_TYPE with
+{
+//  @EndUserText.label: 'LeaveTypeID'
+//  @UI.identification: [ {
+//    position: 10 , 
+//    label: 'LeaveTypeID'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 10 , 
+//    label: 'LeaveTypeID'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 10 
+//  } ]
+  @UI.hidden: true
+  LeaveTypeID;
+  
+  @UI.facet: [ {
+    label: 'Leave Type Infos', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 
+  } ]
+  @UI.lineItem: [ {
+    position: 10 
+  } ]
+//  @UI.selectionField: [ {
+//    position: 10 
+//  } ]
+  LeaveTypeName;
+  
+  @EndUserText.label: 'Requires Approval'
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Requires Approval'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label: 'Requires Approval'
+  } ]
+//  @UI.selectionField: [ {
+//    position: 20 
+//  } ]
+  RequiresApproval;
+  
+  @EndUserText.label: 'Max Days/Year'
+  @UI.identification: [ {
+    position: 30 
+  } ]
+  @UI.lineItem: [ {
+    position: 30
+  } ]
+  MaxDaysPerYear;
+  
+//  @UI.identification: [ {
+//    position: 40 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 40 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 40 
+//  } ]
+  @UI.hidden: true
+  LocalCreatedBy;
+  
+//  @UI.identification: [ {
+//    position: 50 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 50 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 50 
+//  } ]
+  @UI.hidden: true
+  LocalCreatedAt;
+  
+//  @UI.identification: [ {
+//    position: 60 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 60 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 60 
+//  } ]
+  @UI.hidden: true
+  LocalLastchangedBy;
+  
+//  @UI.identification: [ {
+//    position: 70 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 70 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 70 
+//  } ]
+  @UI.hidden: true
+  LocalLastchangedAt;
+  
+//  @UI.identification: [ {
+//    position: 80 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 80 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 80 
+//  } ]
+  @UI.hidden: true
+  LastChangedAt;
+  
+  @EndUserText.label: '_BaseEntity'
+  @UI.identification: [ {
+    position: 90 , 
+    label: '_BaseEntity'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 , 
+    label: '_BaseEntity'
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  _BaseEntity;
+}
