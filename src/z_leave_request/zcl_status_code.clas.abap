@@ -33,7 +33,7 @@ CLASS zcl_status_code IMPLEMENTATION.
         <fs_original_data>-StatusCode =  '2'.
       ELSEIF <fs_original_data>-Status = 'Approved'.
         <fs_original_data>-StatusCode =  '3'.
-      ELSEIF <fs_original_data>-Status = 'Approved'.
+      ELSEIF <fs_original_data>-Status = 'Rejected'.
         <fs_original_data>-StatusCode =  '1'.
       ELSE.
         <fs_original_data>-StatusCode =  '0'.
