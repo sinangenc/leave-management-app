@@ -1,4 +1,4 @@
-# 🧾 ABAP Cloud Leave Management App (RAP)
+# 🧾 Leave Management App - ABAP Cloud (RAP)
 
 This **Leave Management Application** is built with **ABAP Cloud** and the **RESTful ABAP Programming Model (RAP)**.  
 It allows employees to submit leave requests and enables managers to approve or reject them through the Fiori Elements interface.
@@ -30,8 +30,8 @@ In this project, I mainly used the following technologies and concepts:
 | **Value Helps** | Implemented CDS-based value helps for selections |
 | **Message Classes** | Used for custom validation messages and user-friendly error handling |
 | **UI Annotations** | To control how data is displayed (icons, visibility, grouping, etc.) |
-| **Fiori Elements (OData V4)** | Added UI annotations to improve how data is displayed in List Report and Object Page |
-| **Eclipse ADT (ABAP Development Tools)** | Main development environment for coding, activation, and testing |
+| **Fiori Elements** | Added UI annotations to improve how data is displayed in List Report and Object Page |
+| **Eclipse ADT (ABAP Development Tools)** | Main development environment for coding |
 | **ABAP Cloud Environment (SAP BTP Trial)** | For developing and deploying the application |
 
 
