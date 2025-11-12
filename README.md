@@ -72,7 +72,25 @@ The application is built around four main entities that form the core of the lea
 > In a real production system, **RAP DCL roles** would be used to restrict data access (e.g., employees see only their own requests, managers see their team’s).  
 > Since this demo runs on **SAP BTP Trial**, which supports only **one user**, no authorization logic was implemented — all requests are visible to that user.
 
+## 📸 Screenshots
 
+![Leave Types List Report View](docs/screenshots/Leave_Types.png)
+*Leave Types in List Report View*
 
+![Departments List Report View](docs/screenshots/Departments.png)
+*Departments in List Report View*
 
+![Employees List Report View](docs/screenshots/Employees.png)
+*Employees in List Report View*
 
+![Leave Requests List Report View](docs/screenshots/Leave_Requests.png)
+*Leave Requests in List Report View*
+
+![Department Details Object Page](docs/screenshots/Department_Details.png)
+*Object Page showing department details*
+
+![Employee Details Object Page](docs/screenshots/Employee_Details.png)
+*Object Page showing employee details*
+
+![Validation Messages](docs/screenshots/Leave_Request_Checks.png)  
+*Example of validation messages shown during leave request creation*
