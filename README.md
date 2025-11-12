@@ -6,9 +6,6 @@ It allows employees to submit leave requests and enables managers to approve or 
 The application was developed as a **learning and demo project** on **SAP BTP Trial (ABAP Environment)**.  
 It demonstrates how to build a full RAP-based CRUD application, including **determinations**, **validations**, and **UI annotations**.
 
-> **Note:**  
-> In a real production system, RAP **Data Control Language (DCL)** roles are used to manage authorizations — for example, to ensure that employees only see their own requests and managers only see their team’s. However, since this project runs on **SAP BTP Trial**, which supports only **a single user**, no DCL or authorization logic was implemented. All leave requests are visible to the active user.
-
 ## 📘 Technologies: 
 
 In this project, I mainly used the following technologies and concepts:
@@ -36,4 +33,46 @@ In this project, I mainly used the following technologies and concepts:
 | **Fiori Elements (OData V4)** | Added UI annotations to improve how data is displayed in List Report and Object Page |
 | **Eclipse ADT (ABAP Development Tools)** | Main development environment for coding, activation, and testing |
 | **ABAP Cloud Environment (SAP BTP Trial)** | For developing and deploying the application |
+
+
+## 🧩 Data Model and Business Rules
+
+The application is built around four main entities that form the core of the leave management process.
+
+| Entity | Description | Important Fields |
+|--------|--------------|------------------|
+| **Employee** | Stores basic employee and department information | EmployeeID, FirstName, LastName, Email, DepartmentID |
+| **Department** | Contains department data and assigned manager | DepartmentID, DepartmentName, ManagerID |
+| **LeaveType** | Defines available leave types and their yearly limits | LeaveTypeID, LeaveName, RequiresApproval, MaxDaysPerYear |
+| **LeaveRequest** | Represents a leave request created by an employee | RequestID, EmployeeID, LeaveTypeID, StartDate, EndDate, Status |
+
+
+### ⚙️ Business Rules and Validations
+
+#### 🔹 **Validations**
+- **Mandatory Fields:** Each entity checks that its required fields (e.g., names, IDs, or dates) are filled before saving.  
+- **Date Range Check (LeaveRequest):** `StartDate` must be earlier than `EndDate`.  
+- **Overlapping Check (LeaveRequest):** An employee cannot have overlapping leave requests for the same period.  
+- **Maximum Days Validation (LeaveRequest):** Total requested days must not exceed `LeaveType.MaxDaysPerYear`.  
+- **Approval Requirement (LeaveRequest):** Certain leave types (e.g., Annual, Unpaid) require manager approval.  
+- **Manager Assignment Check (Department):** Checks if the selected employee is already the manager of another department.
+
+#### 🔹 **Determinations**
+- **Request Date Auto-set:** When a new leave request is created, the `RequestDate` field is automatically set to the current date.  
+- **Default Status:** When a leave request is created, the `Status` is determined based on the leave type:  
+  - If the selected leave type **requires approval**, the status is set to **Pending**.  
+  - Otherwise, the status is automatically set to **Approved**.
+- **Managed Fields Auto-fill:** Standard managed fields such as `CreatedBy`, `CreatedAt`, and `LastChangedAt` are automatically filled by the RAP framework.  
+
+#### 🔹 **Actions**
+- **Approve:** Available only for leave requests with `Status = 'Pending'`. It updates the request status to **Approved** and records `ApprovedBy = $session.user`.  
+- **Reject:** Available only for leave requests with `Status = 'Pending'`.  It updates the request status to **Rejected**.
+
+> **Note:**  
+> In a real production system, **RAP DCL roles** would be used to restrict data access (e.g., employees see only their own requests, managers see their team’s).  
+> Since this demo runs on **SAP BTP Trial**, which supports only **one user**, no authorization logic was implemented — all requests are visible to that user.
+
+
+
+
 
